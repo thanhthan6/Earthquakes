@@ -1,17 +1,19 @@
-//
-//  EarthquakesApp.swift
-//  Earthquakes
-//
-//  Created by Macbook on 20/04/2023.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The app and main window group scene.
+*/
 
 import SwiftUI
 
 @main
 struct EarthquakesApp: App {
+    @StateObject var quakesProvider = QuakesProvider()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Quakes()
+                .environmentObject(quakesProvider)
         }
     }
 }
